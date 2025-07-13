@@ -168,29 +168,30 @@ ALTER TABLE `country`
 -- Indexes for table `tbl_bid`
 --
 ALTER TABLE `tbl_bid`
-  ADD PRIMARY KEY (`bid_id`),
-  ADD KEY `pro_id` (`pro_id`),
-  ADD KEY `uid` (`uid`);
+  ADD PRIMARY KEY (`bid_id`),    
+  ADD KEY `pro_id` (`pro_id`),    --foreign key 
+  ADD KEY `uid` (`uid`);          --foreign key
 
 --
 -- Indexes for table `tbl_img`
 --
-ALTER TABLE `tbl_img`
-  ADD PRIMARY KEY (`img_id`),
-  ADD KEY `pro_id` (`pro_id`);
+ALTER TABLE `tbl_img`                --this table indicates product image related 
+  ADD PRIMARY KEY (`img_id`),           
+  ADD KEY `pro_id` (`pro_id`);        --ek product ki multiple image ad hongi so uske karan go inside the table within table we need foreign key
+                                      --normalization in table product  ek product ke liye mutiple images  so multiple images in one table 
 
 --
 -- Indexes for table `tbl_product`
 --
-ALTER TABLE `tbl_product`
-  ADD PRIMARY KEY (`pro_id`),
-  ADD KEY `uid` (`uid`);
+ALTER TABLE `tbl_product`          
+  ADD PRIMARY KEY (`pro_id`),       -- product in unique
+  ADD KEY `uid` (`uid`);            --the one who is seller
 
 --
 -- Indexes for table `tbl_purchase`
 --
-ALTER TABLE `tbl_purchase`
-  ADD PRIMARY KEY (`purchase_id`),
+ALTER TABLE `tbl_purchase`          -- this table will give the detaiks about the purchase done of the product
+  ADD PRIMARY KEY (`purchase_id`),    
   ADD KEY `bid_id` (`bid_id`);
 
 --
