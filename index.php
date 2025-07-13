@@ -2,7 +2,7 @@
 session_start();
 include 'db.php';
 include('pro_table_check.php');
-if (isset($_SESSION['user'])) {
+if (isset($_SESSION['user'])) {    // function isset states that if is set then only connection is made otherwise not 
     header("location:user_home.php");
 }
 
@@ -36,7 +36,7 @@ if (isset($_REQUEST['submit'])) {
     $name = $_REQUEST['name'];
     $surname = $_REQUEST['sname'];
     $email = $_REQUEST['email'];
-    $password = $_REQUEST['pass'];
+    $password = $_REQUEST['pass'];  // 
     $gender = $_REQUEST['gn'];
     $hobby = implode(", ", $_REQUEST['hb']);
     $country = $_REQUEST['cn'];
