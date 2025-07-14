@@ -1,4 +1,4 @@
 <?php 
-$con = new mysqli('localhost','root','','Multiuser-Auction-System');      
+$con = new mysqli('localhost','root','','online-auction-master.');      
 date_default_timezone_set('asia/kolkata');   
  ?>
